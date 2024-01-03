@@ -4,7 +4,7 @@ import TitlePage from "./TitlePage";
 
 export default function HeroPage() {
   return (
-    <div>
+    <div className="Hero">
       <Navbar />
       <TitlePage />
     </div>

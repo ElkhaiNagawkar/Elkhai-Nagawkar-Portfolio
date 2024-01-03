@@ -9,6 +9,10 @@ body {
   /*Secondary colour: #8C8C75*/
 }
 
+.Hero {
+  height: 100vh;
+}
+
 .navbar {
   display: grid;
   grid-template-columns: 0.5fr;
@@ -33,7 +37,7 @@ body {
 .main--navbar {
   display: flex;
   list-style: none;
-  gap: 35%;
+  gap: 18%;
   font-family: "General Sans", sans-serif;
   font-weight: lighter;
   color: #7e7e69;
@@ -83,16 +87,14 @@ body {
   overflow: hidden;
 }
 
-#about {
-  animation: top-slide 1.3s ease-in-out forwards;
-}
-
-#projects {
-  animation: bottom-slide 1.3s ease-in-out forwards;
-}
-
+#about,
 #contact {
-  animation: top-slide 1.3s ease-in-out forwards;
+  animation: top-slide 2s ease-in-out forwards;
+}
+
+#projects,
+#toolbox {
+  animation: bottom-slide 2s ease-in-out forwards;
 }
 
 .hero--text {
@@ -236,28 +238,31 @@ body {
   background-color: black;
   width: 1px;
   height: 40px;
-  animation: scroll-line-anim 2.5s linear infinite 1s;
+  animation: scroll-line-anim 2s linear infinite 1s;
 }
 
-/* .hero--description::before {
-  content: "";
-  background-color: #6e6353;
-  position: absolute;
-  height: 2%;
-  width: 3rem;
-  inset: 230% 50% 0% 279%;
-  transform: rotate(-90deg);
-  opacity: 0.5;
-  animation: scroll-line-anim 0.5s ease-in-out infinite;
+.about--section {
+  padding-left: 6rem;
+  padding-bottom: 4rem;
+  background-color: #8c8c75;
+  display: flex;
+  flex-direction: column;
 }
 
-.hero--description::after {
-  content: "scroll";
-  height: 1px;
-  position: absolute;
-  inset: 200% 0% 0% 280%;
-  transform: rotate(-90deg);
-} */
+.about--header {
+  font-family: "General Sans", sans-serif;
+  color: #d4d4c9;
+  font-size: 3rem;
+  margin-top: 4rem;
+}
+
+.about--paragraph {
+  font-family: "Supreme", sans-serif;
+  color: #dadace;
+  font-weight: 500;
+  width: 50rem;
+  font-size: 1.1rem;
+}
 
 @keyframes name-anim {
   to {

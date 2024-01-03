@@ -14,6 +14,7 @@ export default function Navbar() {
         </div>
         <ul className="main--navbar">
           <li id="about">About</li>
+          <li id="toolbox">Toolbox</li>
           <li id="projects">Projects</li>
           <li id="contact">Contact</li>
         </ul>
