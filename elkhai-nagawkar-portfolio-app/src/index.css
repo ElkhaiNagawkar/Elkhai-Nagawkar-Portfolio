@@ -204,7 +204,7 @@ body {
   font-size: 1.2rem;
   line-height: 1.5rem;
   opacity: 0;
-  animation: bottom-slide 1.5s ease-in-out forwards 5.2s;
+  animation: bottom-slide-blur 1.5s ease-in-out forwards 5.2s;
 }
 
 .scroll--div {
@@ -249,11 +249,20 @@ body {
   flex-direction: column;
 }
 
+.about--header--div {
+  overflow: hidden;
+}
+
+.about--paragraph--div {
+  overflow: hidden;
+}
+
 .about--header {
   font-family: "General Sans", sans-serif;
   color: #d4d4c9;
   font-size: 3rem;
   margin-top: 4rem;
+  opacity: 0;
 }
 
 .about--paragraph {
@@ -262,6 +271,23 @@ body {
   font-weight: 500;
   width: 50rem;
   font-size: 1.1rem;
+  opacity: 0;
+}
+
+.about--header--animation {
+  animation: left-slide 0.7s ease-out forwards;
+}
+
+.about--paragraph--animation {
+  animation: left-slide 0.7s ease-out forwards 0.3s;
+}
+
+.funfact--header--animation {
+  animation: left-slide 0.7s ease-out forwards 0.6s;
+}
+
+.funfact--paragraph--animation {
+  animation: left-slide 0.7s ease-out forwards 0.9s;
 }
 
 @keyframes name-anim {
@@ -300,6 +326,18 @@ body {
   }
 }
 
+@keyframes bottom-slide-blur {
+  from {
+    transform: translateY(120px);
+    filter: blur(1rem);
+  }
+  to {
+    transform: translateY(0px);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
 @keyframes line-anim {
   from {
     width: 0%;
@@ -309,20 +347,23 @@ body {
   }
 }
 
-@keyframes slide {
-  from {
-    transform: translateX(0px);
-  }
-  to {
-    transform: translateX(50px);
-  }
-}
-
 @keyframes scroll-line-anim {
   from {
     transform: translateY(-90px);
   }
   to {
     transform: translateY(100px);
+  }
+}
+
+@keyframes left-slide {
+  from {
+    transform: translateX(-500px);
+    filter: blur(1rem);
+  }
+  to {
+    transform: translateX(0px);
+    filter: blur(0);
+    opacity: 1;
   }
 }
