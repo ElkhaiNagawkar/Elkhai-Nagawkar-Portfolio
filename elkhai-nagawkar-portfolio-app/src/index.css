@@ -13,10 +13,16 @@ body {
   height: 100vh;
 }
 
-.navbar {
+.full--nav {
+  position: fixed;
   display: grid;
-  grid-template-columns: 0.5fr;
+  grid-template-columns: 1fr;
   justify-content: center;
+  gap: 10%;
+  inset: 4% 30% 89% 30%;
+}
+
+.navbar {
   padding: 2rem;
   font-size: 20px;
   color: #8d7e69;
@@ -73,6 +79,17 @@ body {
 .name--home:hover #lastname {
   transition-delay: 0.4s;
   padding-left: 5px;
+}
+
+.nav--indicator {
+  background: black;
+  position: absolute;
+  inset: -5% 0% 0% 4%;
+  width: 2.3rem;
+  height: 6px;
+  border-radius: 50px;
+  z-index: -1;
+  transition: 0.5s ease-in-out;
 }
 
 .picker {
@@ -290,6 +307,24 @@ body {
   animation: left-slide 0.7s ease-out forwards 0.9s;
 }
 
+.main--toolbox {
+  padding: 4rem 6rem;
+}
+
+.toolbox--programming--hadear {
+  font-family: "General Sans", sans-serif;
+  font-size: 3rem;
+  color: #8c8c75;
+}
+
+.skills {
+  display: flex;
+  gap: 1rem;
+  font-family: "Supreme", sans-serif;
+  font-size: 1.2rem;
+  /* Continue here add box styling to Box */
+}
+
 @keyframes name-anim {
   to {
     stroke-dashoffset: 0;
@@ -365,5 +400,23 @@ body {
     transform: translateX(0px);
     filter: blur(0);
     opacity: 1;
+  }
+}
+
+@keyframes slide-indicator {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(230px);
+  }
+}
+
+@keyframes slide-indicator-back {
+  from {
+    transform: translateX(230px);
+  }
+  to {
+    transform: translateX(0px);
   }
 }
