@@ -6,13 +6,16 @@ import { useInView } from "react-intersection-observer";
 import Toolbox from "./Toolbox";
 
 export default function App() {
-  const { ref, inView } = useInView({ threshold: 0.5 });
-  const { nextRef, inView: aboutView } = useInView();
+  const { ref: heroRef, inView: heroView } = useInView({ threshold: 0.5 });
+  const { ref: aboutRef, inView: aboutView } = useInView({ threshold: 0.7 });
+  const { ref: ToolboxRef, inView: ToolboxView } = useInView({
+    threshold: 0.5,
+  });
+
   const navInd = document.querySelector(".nav--indicator");
   const item = document.querySelectorAll(".main--navbar li");
   const sec = document.querySelector(".name--home");
-  console.log(aboutView);
-  function ind(e) {
+  function indicatorPos(e) {
     if (navInd) {
       navInd.style.left = e.offsetLeft + "px";
       navInd.style.width = e.offsetWidth + "px";
@@ -20,21 +23,26 @@ export default function App() {
   }
 
   React.useEffect(() => {
-    if (inView) {
-      ind(sec);
-    } else if (!aboutView) {
-      ind(item[0]);
+    if (heroView) {
+      indicatorPos(sec);
+    } else if (aboutView) {
+      indicatorPos(item[0]);
+    } else if (ToolboxView) {
+      indicatorPos(item[1]);
     }
-  }, [inView, aboutView]);
+  }, [heroView, aboutView, ToolboxView]);
+  console.log(aboutView);
   return (
     <div>
-      <div ref={ref}>
+      <div ref={heroRef}>
         <HeroPage />
       </div>
-      <div ref={nextRef}>
+      <div ref={aboutRef}>
         <About />
       </div>
-      <Toolbox />
+      <div ref={ToolboxRef}>
+        <Toolbox />
+      </div>
     </div>
   );
 }

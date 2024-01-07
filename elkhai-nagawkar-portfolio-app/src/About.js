@@ -12,7 +12,7 @@ export default function About() {
           }`}
           ref={ref}
         >
-          ABOUT
+          About
         </h1>
       </div>
       <div className="about--paragraph--div">
@@ -37,7 +37,7 @@ export default function About() {
             inView ? "funfact--header--animation" : ""
           }`}
         >
-          Fun Fact
+          Fun fact
         </h1>
       </div>
       <div className="about--paragraph--div">

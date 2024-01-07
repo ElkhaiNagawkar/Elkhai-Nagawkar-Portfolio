@@ -280,6 +280,7 @@ body {
   font-size: 3rem;
   margin-top: 4rem;
   opacity: 0;
+  letter-spacing: -1px;
 }
 
 .about--paragraph {
@@ -311,18 +312,62 @@ body {
   padding: 4rem 6rem;
 }
 
+.programming--div {
+  overflow: hidden;
+}
+
 .toolbox--programming--hadear {
   font-family: "General Sans", sans-serif;
   font-size: 3rem;
   color: #8c8c75;
+  letter-spacing: -1px;
+  display: inline-block;
+  padding-right: 18rem;
+  opacity: 1;
+}
+
+.toolbox--programming--hadear--animation {
+  animation: top-slide 1s ease-out forwards;
 }
 
 .skills {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   gap: 1rem;
   font-family: "Supreme", sans-serif;
   font-size: 1.2rem;
-  /* Continue here add box styling to Box */
+  width: 35rem;
+  padding: 1.5rem 0rem 5rem 0rem;
+}
+
+.all-skills {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.box {
+  background-color: #dbd5ce;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  transition: 0.2s ease-in;
+}
+
+.box:hover {
+  scale: 0.9;
+}
+
+.skills:nth-child(1) {
+  animation: left-slide 1s ease-in forwards;
+}
+
+.skill {
+  color: #8c8c75;
+  padding: 1.5rem 2rem;
+  font-weight: bold;
 }
 
 @keyframes name-anim {
@@ -400,23 +445,5 @@ body {
     transform: translateX(0px);
     filter: blur(0);
     opacity: 1;
-  }
-}
-
-@keyframes slide-indicator {
-  from {
-    transform: translateX(0px);
-  }
-  to {
-    transform: translateX(230px);
-  }
-}
-
-@keyframes slide-indicator-back {
-  from {
-    transform: translateX(230px);
-  }
-  to {
-    transform: translateX(0px);
   }
 }
