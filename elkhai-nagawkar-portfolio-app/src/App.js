@@ -1,9 +1,10 @@
 import React from "react";
-import HeroPage from "./HeroPage";
 import "./index.css";
-import About from "./About";
+import HeroPage from "./Sections/HeroPage";
+import About from "./Sections/About";
 import { useInView } from "react-intersection-observer";
-import Toolbox from "./Toolbox";
+import Toolbox from "./Sections/Toolbox";
+import Projects from "./Sections/Projects";
 
 export default function App() {
   const { ref: heroRef, inView: heroView } = useInView({ threshold: 0.5 });
@@ -31,7 +32,6 @@ export default function App() {
       indicatorPos(item[1]);
     }
   }, [heroView, aboutView, ToolboxView]);
-  console.log(aboutView);
   return (
     <div>
       <div ref={heroRef}>
@@ -43,6 +43,7 @@ export default function App() {
       <div ref={ToolboxRef}>
         <Toolbox />
       </div>
+      <Projects />
     </div>
   );
 }
