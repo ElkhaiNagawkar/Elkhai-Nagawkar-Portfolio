@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 
 export default function Toolbox() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.5 });
-  const { ref: familiarRef, inView: familiarinView } = useInView({
+  const { ref: VersionRef, inView: VersionInView } = useInView({
     triggerOnce: true,
     threshold: 0.3,
   });
@@ -31,35 +31,51 @@ export default function Toolbox() {
             className={`skills ${inView ? "skills--animation" : ""}`}
             ref={ref}
           >
-            <Box colour="blue" skill="C" />
-            <Box colour="blue" skill="C++" />
-            <Box colour="blue" skill="Java" />
-            <Box colour="blue" skill="SQL" />
-            <Box colour="blue" skill="HTML" />
-            <Box colour="blue" skill="CSS" />
-            <Box colour="blue" skill="Javascript" />
+            <Box skill="C" />
+            <Box skill="C++" />
+            <Box skill="Java" />
+            <Box skill="SQL" />
+            <Box skill="HTML" />
+            <Box skill="CSS" />
+            <Box skill="Javascript" />
           </div>
           <div
             className={`skills ${inView ? "skills--framework--animation" : ""}`}
           >
-            <Box colour="blue" skill="React" />
-            <Box colour="blue" skill="Tailwind" />
+            <Box skill="React" />
+            <Box skill="Tailwind" />
           </div>
         </div>
         <h1
           className={`toolbox--programming--hadear ${
-            familiarinView ? "toolbox--prog--animation" : ""
+            VersionInView ? "toolbox--prog--animation" : ""
+          }`}
+        >
+          Version Control
+        </h1>
+        <h1
+          className={`toolbox--programming--hadear ${
+            VersionInView ? "toolbox--familiar--animation" : ""
           }`}
         >
           Some Familiarity
         </h1>
-        <div
-          className={`skills ${familiarinView ? "familiar-animation" : ""}`}
-          ref={familiarRef}
-        >
-          <Box colour="blue" skill="C#" />
-          <Box colour="blue" skill="jQuery" />
-          <Box colour="blue" skill="Bootstrap" />
+
+        <div className="all-skills">
+          <div
+            className={`skills ${VersionInView ? "version--animation" : ""}`}
+          >
+            <Box skill="Git" />
+            <Box skill="GitHub" />
+          </div>
+          <div
+            className={`skills ${VersionInView ? "familiar--animation" : ""}`}
+            ref={VersionRef}
+          >
+            <Box skill="C#" />
+            <Box skill="jQuery" />
+            <Box skill="Bootstrap" />
+          </div>
         </div>
       </div>
     </div>

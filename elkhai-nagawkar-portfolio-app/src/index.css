@@ -346,6 +346,10 @@ body {
   opacity: 0;
 }
 
+.toolbox--programming--hadear:nth-child(4) {
+  padding-right: 30rem;
+}
+
 .skills {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -399,11 +403,19 @@ body {
   animation: right-slide 1s ease-out forwards 1.3s;
 }
 
-.familiar-animation {
-  animation: bottom-slide 0.6s ease-out forwards 1.3s;
+.toolbox--familiar--animation {
+  animation: top-slide 1s ease-out forwards 1.3s;
 }
 
-.all--projects {
+.familiar--animation {
+  animation: bottom-slide 0.6s ease-out forwards 1.5s;
+}
+
+.version--animation {
+  animation: bottom-slide 0.6s ease-out forwards 0.8s;
+}
+
+.projects--section {
   background-color: #8c8c75;
   padding: 4rem 6rem;
 }
@@ -412,6 +424,36 @@ body {
   font-family: "General Sans", sans-serif;
   color: #d4d4c9;
   font-size: 3rem;
+}
+
+.projects--div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.all--projects {
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  gap: 1rem;
+}
+
+.projectImg {
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+}
+
+.project:nth-child(1) {
+  grid-row: 1 / 4;
+  grid-column: 1 / 6;
+}
+
+.project:nth-child(2) {
+  grid-row: 1 / 4;
+  grid-column: 6 / 9;
 }
 
 @keyframes name-anim {
