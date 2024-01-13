@@ -420,16 +420,14 @@ body {
   padding: 4rem 6rem;
 }
 
+.projects--header--div {
+  overflow: hidden;
+}
+
 .projects--header {
   font-family: "General Sans", sans-serif;
   color: #d4d4c9;
   font-size: 3rem;
-}
-
-.projects--div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .all--projects {
@@ -440,20 +438,64 @@ body {
   gap: 1rem;
 }
 
-.projectImg {
-  width: 100%;
-  height: 100%;
-  border-radius: 25px;
+.project {
+  display: flex;
+  object-fit: cover;
 }
 
 .project:nth-child(1) {
-  grid-row: 1 / 4;
+  grid-row: 1 / 3;
   grid-column: 1 / 6;
 }
 
 .project:nth-child(2) {
   grid-row: 1 / 4;
   grid-column: 6 / 9;
+}
+
+.projectImg {
+  max-width: 100%;
+  height: auto;
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project--title--div {
+  position: absolute;
+  width: 100%;
+  max-height: 100%;
+  top: 0;
+  background: linear-gradient(180deg, transparent 10%, rgb(139, 139, 116) 90%);
+  opacity: 0;
+  border-radius: 25px;
+  transition: 0.5s ease-out;
+}
+
+.project--title--div:hover {
+  opacity: 1;
+}
+
+.project--title {
+  font-family: "General Sans", sans-serif;
+  color: #d4d4c9;
+  font-size: 2rem;
+}
+
+.project--description {
+  width: 35rem;
+  font-family: "Supreme", sans-serif;
+  color: #dadace;
+  font-weight: 500;
+}
+
+.resources--used {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding-top: 0.7rem;
+  font-family: "Supreme", sans-serif;
+  color: white;
 }
 
 @keyframes name-anim {

@@ -1,15 +1,25 @@
 import React from "react";
-import ProjectBox from "./ProjectBox";
+import { useInView } from "react-intersection-observer";
+import ProjectBox from "../HelperComponents/ProjectBox";
 
 export default function Projects() {
+  const { ref, inView } = useInView({ triggerOnce: true });
   return (
     <div className="projects--section">
-      <h1 className="projects--header">Projects</h1>
-      <div className="projects--div">
-        <div className="all--projects">
-          <ProjectBox title="Portfolio" projectImg="ElkhaiNagawkarPort.png" />
-          <ProjectBox title="Portfolio" projectImg="ElkhaiNagawkarPort.png" />
-        </div>
+      <div className="projects--header--div">
+        <h1
+          ref={ref}
+          className={`projects--header ${
+            inView ? "project--title--animation" : ""
+          }`}
+        >
+          Projects
+        </h1>
+      </div>
+
+      <div className="all--projects">
+        <ProjectBox title="Portfolio" projectImg="ElkhaiNagawkarPort.png" />
+        <ProjectBox title="Portfolio" projectImg="test.png" />
       </div>
     </div>
   );

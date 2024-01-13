@@ -9,8 +9,11 @@ import Projects from "./Sections/Projects";
 export default function App() {
   const { ref: heroRef, inView: heroView } = useInView({ threshold: 0.5 });
   const { ref: aboutRef, inView: aboutView } = useInView({ threshold: 0.7 });
-  const { ref: ToolboxRef, inView: ToolboxView } = useInView({
+  const { ref: toolboxRef, inView: toolboxView } = useInView({
     threshold: 0.5,
+  });
+  const { ref: projectsRef, inView: projectsView } = useInView({
+    threshold: 0.2,
   });
 
   const navInd = document.querySelector(".nav--indicator");
@@ -28,10 +31,12 @@ export default function App() {
       indicatorPos(sec);
     } else if (aboutView) {
       indicatorPos(item[0]);
-    } else if (ToolboxView) {
+    } else if (toolboxView) {
       indicatorPos(item[1]);
+    } else if (projectsView) {
+      indicatorPos(item[2]);
     }
-  }, [heroView, aboutView, ToolboxView]);
+  }, [heroView, aboutView, toolboxView, projectsView]);
   return (
     <div>
       <div ref={heroRef}>
@@ -40,10 +45,12 @@ export default function App() {
       <div ref={aboutRef}>
         <About />
       </div>
-      <div ref={ToolboxRef}>
+      <div ref={toolboxRef}>
         <Toolbox />
       </div>
-      <Projects />
+      <div ref={projectsRef}>
+        <Projects />
+      </div>
     </div>
   );
 }
