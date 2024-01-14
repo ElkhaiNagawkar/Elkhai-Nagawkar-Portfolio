@@ -17,9 +17,17 @@ export default function Projects() {
         </h1>
       </div>
 
-      <div className="all--projects">
-        <ProjectBox title="Portfolio" projectImg="ElkhaiNagawkarPort.png" />
-        <ProjectBox title="Portfolio" projectImg="test.png" />
+      <div className="projects">
+        <div
+          className={`all--projects ${inView ? "first--project--anim" : ""}`}
+        >
+          <ProjectBox title="Portfolio" projectImg="ElkhaiNagawkarPort.png" />
+        </div>
+        <div
+          className={`all--projects ${inView ? "second--project--anim" : ""}`}
+        >
+          <ProjectBox title="Portfolio" projectImg="test.png" />
+        </div>
       </div>
     </div>
   );

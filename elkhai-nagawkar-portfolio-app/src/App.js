@@ -5,6 +5,7 @@ import About from "./Sections/About";
 import { useInView } from "react-intersection-observer";
 import Toolbox from "./Sections/Toolbox";
 import Projects from "./Sections/Projects";
+import Contact from "./Sections/Contact";
 
 export default function App() {
   const { ref: heroRef, inView: heroView } = useInView({ threshold: 0.5 });
@@ -13,8 +14,9 @@ export default function App() {
     threshold: 0.5,
   });
   const { ref: projectsRef, inView: projectsView } = useInView({
-    threshold: 0.2,
+    threshold: 0.3,
   });
+  const { ref: contactRef, inView: contactView } = useInView();
 
   const navInd = document.querySelector(".nav--indicator");
   const item = document.querySelectorAll(".main--navbar li");
@@ -35,8 +37,10 @@ export default function App() {
       indicatorPos(item[1]);
     } else if (projectsView) {
       indicatorPos(item[2]);
+    } else if (contactView) {
+      indicatorPos(item[3]);
     }
-  }, [heroView, aboutView, toolboxView, projectsView]);
+  }, [heroView, aboutView, toolboxView, projectsView, contactView]);
   return (
     <div>
       <div ref={heroRef}>
@@ -50,6 +54,9 @@ export default function App() {
       </div>
       <div ref={projectsRef}>
         <Projects />
+      </div>
+      <div ref={contactRef}>
+        <Contact />
       </div>
     </div>
   );
