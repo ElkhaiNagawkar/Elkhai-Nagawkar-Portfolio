@@ -14,7 +14,7 @@ export default function App() {
     threshold: 0.5,
   });
   const { ref: projectsRef, inView: projectsView } = useInView({
-    threshold: 0.3,
+    threshold: 0.5,
   });
   const { ref: contactRef, inView: contactView } = useInView();
 
@@ -43,19 +43,19 @@ export default function App() {
   }, [heroView, aboutView, toolboxView, projectsView, contactView]);
   return (
     <div>
-      <div ref={heroRef}>
+      <div className="heropage--div" ref={heroRef}>
         <HeroPage />
       </div>
-      <div ref={aboutRef}>
+      <div className="about--div" ref={aboutRef}>
         <About />
       </div>
-      <div ref={toolboxRef}>
+      <div className="toolbox--div" ref={toolboxRef}>
         <Toolbox />
       </div>
-      <div ref={projectsRef}>
+      <div className="projects--div" ref={projectsRef}>
         <Projects />
       </div>
-      <div ref={contactRef}>
+      <div className="contact--div" ref={contactRef}>
         <Contact />
       </div>
     </div>

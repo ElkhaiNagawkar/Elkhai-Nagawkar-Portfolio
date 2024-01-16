@@ -56,6 +56,7 @@ body {
 
 .name--home {
   display: flex;
+  z-index: 10;
 }
 
 .name--home .navbar--name:nth-child(even) {
@@ -76,7 +77,7 @@ body {
   transition-delay: 0.4s;
 }
 
-.name--home:hover #lastname {
+.name--home:hover .lastname {
   transition-delay: 0.4s;
   padding-left: 5px;
 }
@@ -524,7 +525,7 @@ body {
 
 .contact--section {
   padding: 4rem 6rem;
-  height: 75vh;
+  height: 50vh;
   position: relative;
 }
 
@@ -532,10 +533,16 @@ body {
 .thanks--div {
   font-family: "General Sans", sans-serif;
   color: #8c8c75;
+  overflow: hidden;
+}
+
+.contact--header--animation {
+  animation: top-slide 1s forwards ease-out;
 }
 
 .contact--header {
   font-size: 3rem;
+  opacity: 0;
 }
 
 .thanks--div {
@@ -543,9 +550,13 @@ body {
   font-size: 0.1rem;
   width: 30rem;
   height: 10rem;
-  inset: 25% 0% 0% 72%;
+  inset: 39% 0% 0% 72%;
   font-size: 2rem;
-  animation: bottom-slide-blur 1.5s forwards ease-out 1s;
+  opacity: 0;
+}
+
+.thanks--div--animation {
+  animation: bottom-slide-blur 1.5s forwards ease-out 3s;
 }
 
 .links {
@@ -562,6 +573,7 @@ body {
   font-size: 1.4rem;
   color: #8c8c75;
   font-weight: 600;
+  overflow: hidden;
 }
 
 .socials--section {
@@ -572,16 +584,67 @@ body {
   font-size: 1.4rem;
   color: #8c8c75;
   font-weight: 600;
+  overflow: hidden;
 }
 
-.link {
+.mail--list {
+  list-style: none;
+  width: 18.5rem;
+}
+
+.social--list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  width: 5.7rem;
+  overflow: hidden;
+  padding-bottom: 1rem;
+}
+
+.mail--link,
+.social--link {
   text-decoration: none;
+  color: #686858;
+  opacity: 0;
+  padding-bottom: 1rem;
 }
 
-.github--logo > svg {
+.mail--link::after,
+.social--link::after {
+  content: "";
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 0rem;
+  height: 0rem;
+  background: black;
+  display: flex;
+  transition: 0.5s ease-out;
+}
+
+.mail--link:hover::after {
+  width: 18.5rem;
+  height: 1px;
+}
+
+.social--link:hover:after {
+  width: 5.8rem;
+  height: 1px;
+}
+
+.mail--section > h3,
+.socials--section > h3 {
+  opacity: 0;
+}
+
+.mail--header--animation {
+  animation: top-slide 1s forwards ease-out 0.3s;
+}
+
+.social--header--animation {
+  animation: top-slide 1s forwards ease-out 0.6s;
+}
+
+.links--animation {
+  animation: top-slide 1s forwards ease-out 1.5s;
 }
 
 @keyframes name-anim {

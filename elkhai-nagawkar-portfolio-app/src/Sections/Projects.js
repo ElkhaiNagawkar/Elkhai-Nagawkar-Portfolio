@@ -8,7 +8,6 @@ export default function Projects() {
     <div className="projects--section">
       <div className="projects--header--div">
         <h1
-          ref={ref}
           className={`projects--header ${
             inView ? "project--title--animation" : ""
           }`}
@@ -17,7 +16,7 @@ export default function Projects() {
         </h1>
       </div>
 
-      <div className="projects">
+      <div className="projects" ref={ref}>
         <div
           className={`all--projects ${inView ? "first--project--anim" : ""}`}
         >
