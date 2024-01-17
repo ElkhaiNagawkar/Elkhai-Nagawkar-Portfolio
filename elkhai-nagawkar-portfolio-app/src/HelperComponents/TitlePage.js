@@ -22,6 +22,12 @@ export default function () {
           </div>
         </div>
       </div>
+      <div className="status">
+        <div className="status-circle"></div>
+        <p className="status--text">
+          Currently looking for a Co-op/Internship for the 2024 Fall term
+        </p>
+      </div>
     </section>
   );
 }

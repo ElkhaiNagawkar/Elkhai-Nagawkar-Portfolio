@@ -41,8 +41,18 @@ export default function App() {
       indicatorPos(item[3]);
     }
   }, [heroView, aboutView, toolboxView, projectsView, contactView]);
+
+  const cursor = document.querySelector(".cursor");
+  document.addEventListener("mousemove", (e) => {
+    if (cursor) {
+      cursor.style.left = e.clientX + "px";
+      cursor.style.top = e.clientY + "px";
+    }
+  });
+
   return (
     <div>
+      <div className="cursor"></div>
       <div className="heropage--div" ref={heroRef}>
         <HeroPage />
       </div>

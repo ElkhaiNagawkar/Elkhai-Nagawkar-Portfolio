@@ -7,6 +7,18 @@
 body {
   background-color: #ebe6df;
   /*Secondary colour: #8C8C75*/
+  cursor: none;
+}
+
+.cursor {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(93, 95, 86, 0.7);
+  z-index: 11;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
 }
 
 .Hero {
@@ -52,6 +64,7 @@ body {
 .navbar--name {
   font-size: 20px;
   font-family: "Stardom", sans-serif;
+  animation: left-slide 2.5s forwards ease-out;
 }
 
 .name--home {
@@ -91,6 +104,7 @@ body {
   border-radius: 50px;
   z-index: -1;
   transition: 0.5s ease-in-out;
+  animation: top-slide 1s forwards ease-out;
 }
 
 .picker {
@@ -104,6 +118,7 @@ body {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
   overflow: hidden;
+  animation: top-slide 1s forwards ease-out;
 }
 
 .picker:last-child {
@@ -123,13 +138,23 @@ body {
   );
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
+.dark {
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+}
 
+.light {
+  width: 2.3rem;
+  height: 2.3rem;
+  position: absolute;
+}
 #about,
-#contact {
+#projects {
   animation: top-slide 2s ease-in-out forwards;
 }
 
-#projects,
+#contact,
 #toolbox {
   animation: bottom-slide 2s ease-in-out forwards;
 }
@@ -276,6 +301,32 @@ body {
   width: 1px;
   height: 40px;
   animation: scroll-line-anim 2s linear infinite 1s;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  font-family: "Supreme", sans-serif;
+  width: 35%;
+  padding-top: 0.5rem;
+  margin-left: 10rem;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  opacity: 0;
+  animation: bottom-slide-blur 1.5s ease-in-out forwards 5.8s;
+}
+
+.status-circle {
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid black;
+  border-radius: 50px;
+  margin-right: 1rem;
+  background: rgba(90, 143, 11, 0.8);
+
+  /* This colour will be used when not accepting offers */
+  /* background: rgba(160, 11, 11, 0.8);  */
 }
 
 .about--section {
@@ -607,6 +658,7 @@ body {
   color: #686858;
   opacity: 0;
   padding-bottom: 1rem;
+  cursor: none;
 }
 
 .mail--link::after,
