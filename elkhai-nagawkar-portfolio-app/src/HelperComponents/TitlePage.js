@@ -1,14 +1,21 @@
 import React from "react";
 import Name from "./NameSvg";
-import { useInView } from "react-intersection-observer";
 
-export default function () {
+export default function TitlePage(props) {
   return (
     <section className="hero--section">
       <div className="hero--text">
-        <h1 className="greeting">Hey I'm,</h1>
-        <Name />
-        <p className="hero--description">
+        <h1
+          className={`greeting ${props.darkMode ? "dark--mode--greeting" : ""}`}
+        >
+          Hey I'm,
+        </h1>
+        <Name darkMode={props.darkMode} />
+        <p
+          className={`hero--description ${
+            props.darkMode ? "dark--mode--Herodescription" : ""
+          }`}
+        >
           A <strong>computer programmer</strong> specializing in{" "}
           <strong> backend </strong> and{" "}
           <strong>frontend software development</strong> with more than{" "}
@@ -22,7 +29,7 @@ export default function () {
           </div>
         </div>
       </div>
-      <div className="status">
+      <div className={`status ${props.darkMode ? "dark--mode--status" : ""}`}>
         <div className="status-circle"></div>
         <p className="status--text">
           Currently looking for a Co-op/Internship for the 2024 Fall term

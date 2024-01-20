@@ -6,7 +6,6 @@
 
 body {
   background-color: #ebe6df;
-  /*Secondary colour: #8C8C75*/
   cursor: none;
 }
 
@@ -23,6 +22,7 @@ body {
 
 .Hero {
   height: 100vh;
+  transition: 1s ease-out;
 }
 
 .full--nav {
@@ -138,17 +138,33 @@ body {
   );
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
-.dark {
-  width: 1.5rem;
-  height: 1.5rem;
+
+.LightDark--div {
   position: absolute;
+  inset: 5.8% 0% 0% 95%;
+}
+
+.light--dark {
+  height: 3rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  gap: 1rem;
+}
+
+.dark {
+  width: 1.9rem;
+  height: 1.9rem;
+  padding-left: 0.3rem;
+  transition: 1s ease-out;
 }
 
 .light {
-  width: 2.3rem;
-  height: 2.3rem;
-  position: absolute;
+  width: 2.4rem;
+  height: 2.4rem;
+  transition: 1s ease-out;
 }
+
 #about,
 #projects {
   animation: top-slide 2s ease-in-out forwards;
@@ -184,6 +200,10 @@ body {
   line-height: 1rem;
   margin-left: 0.4rem;
   animation: name-fadeIn 1.3s ease-out forwards 5s;
+}
+
+.name--fade {
+  animation: name-fadeIn 1.3s ease-out forwards;
 }
 
 .name path:nth-child(1) {
@@ -267,6 +287,7 @@ body {
   line-height: 1.5rem;
   opacity: 0;
   animation: bottom-slide-blur 1.5s ease-in-out forwards 5.2s;
+  transition: 1s ease-out;
 }
 
 .scroll--div {
@@ -314,6 +335,7 @@ body {
   line-height: 1.5rem;
   opacity: 0;
   animation: bottom-slide-blur 1.5s ease-in-out forwards 5.8s;
+  transition: 1s ease-out;
 }
 
 .status-circle {
@@ -699,6 +721,35 @@ body {
   animation: top-slide 1s forwards ease-out 1.5s;
 }
 
+/* Dark Theme Colours */
+.dark--mode--heropage {
+  background-color: #1e1e1e;
+  transition: 1s ease-out;
+}
+
+.dark--mode--greeting {
+  color: #f8f8ff;
+  transition: 1s ease-out;
+}
+
+.dark--mode--name {
+  color: #f8f8ff;
+}
+
+.light--glow--animation {
+  animation: light-on-anim 3s forwards ease-out;
+}
+
+.dark--mode--Herodescription {
+  color: #f8f8ff;
+  transition: 1s ease-out;
+}
+
+.dark--mode--status {
+  color: #f8f8ff;
+  transition: 1s ease-out;
+}
+
 @keyframes name-anim {
   to {
     stroke-dashoffset: 0;
@@ -786,5 +837,31 @@ body {
     transform: translateX(0px);
     filter: blur(0);
     opacity: 1;
+  }
+}
+
+@keyframes light-on-anim {
+  0% {
+    filter: drop-shadow(0 0 5rem white);
+    fill: transparent;
+  }
+  20% {
+    filter: none;
+  }
+  40% {
+    filter: drop-shadow(0 0 5rem white);
+  }
+  60% {
+    filter: none;
+  }
+  70% {
+    filter: drop-shadow(0 0 5rem white);
+  }
+  85% {
+    filter: none;
+  }
+  100% {
+    filter: drop-shadow(0 0 10rem white);
+    fill: #f8f8ff;
   }
 }

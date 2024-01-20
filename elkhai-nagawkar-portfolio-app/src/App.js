@@ -6,6 +6,7 @@ import { useInView } from "react-intersection-observer";
 import Toolbox from "./Sections/Toolbox";
 import Projects from "./Sections/Projects";
 import Contact from "./Sections/Contact";
+import LightDark from "./HelperComponents/lightDarkSVG";
 
 export default function App() {
   const { ref: heroRef, inView: heroView } = useInView({ threshold: 0.5 });
@@ -50,11 +51,20 @@ export default function App() {
     }
   });
 
+  const [mode, setMode] = React.useState(false);
+
+  function handleMode() {
+    setMode(!mode);
+  }
+
   return (
     <div>
       <div className="cursor"></div>
-      <div className="heropage--div" ref={heroRef}>
-        <HeroPage />
+      <div onClick={handleMode} className="LightDark--div">
+        <LightDark darkMode={mode} />
+      </div>
+      <div className={`heropage--div`} ref={heroRef}>
+        <HeroPage darkMode={mode} />
       </div>
       <div className="about--div" ref={aboutRef}>
         <About />

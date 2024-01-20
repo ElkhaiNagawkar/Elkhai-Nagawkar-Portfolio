@@ -1,9 +1,21 @@
 import React from "react";
 
-export default function Name() {
+export default function Name(props) {
+  const name = document.querySelector(".name");
+
+  window.onload = function () {
+    if (name) {
+      name.classList.remove("name--fade");
+    }
+  };
+
   return (
     <svg
-      className="name"
+      className={`name ${
+        props.darkMode
+          ? "name dark--mode--name light--glow--animation"
+          : "name--fade"
+      }`}
       width="1137"
       height="144"
       viewBox="0 0 1137 144"
