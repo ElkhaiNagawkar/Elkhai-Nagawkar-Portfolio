@@ -4,9 +4,23 @@ export default function ProjectBox(props) {
   return (
     <div className="project">
       <img className="projectImg" src={`../imgs/${props.projectImg}`}></img>
-      <div className="project--title--div">
-        <h1 className="project--title">{props.title}</h1>
-        <p className="project--description">
+      <div
+        className={`project--title--div ${
+          props.darkMode ? "dark--mode--project--title--div" : ""
+        }`}
+      >
+        <h1
+          className={`project--title ${
+            props.darkMode ? "dark--mode--seondary" : ""
+          }`}
+        >
+          {props.title}
+        </h1>
+        <p
+          className={`project--description ${
+            props.darkMode ? "dark--mode--seondary" : ""
+          }`}
+        >
           This is the first project I have worked on independintly after
           learning React. It aided me in further understanding how React works
           as well as helped me polish and further improve my CSS and Javascript

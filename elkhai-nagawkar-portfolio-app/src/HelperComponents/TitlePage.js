@@ -6,14 +6,14 @@ export default function TitlePage(props) {
     <section className="hero--section">
       <div className="hero--text">
         <h1
-          className={`greeting ${props.darkMode ? "dark--mode--greeting" : ""}`}
+          className={`greeting ${props.darkMode ? "dark--mode--seondary" : ""}`}
         >
           Hey I'm,
         </h1>
         <Name darkMode={props.darkMode} />
         <p
           className={`hero--description ${
-            props.darkMode ? "dark--mode--Herodescription" : ""
+            props.darkMode ? "dark--mode--seondary" : ""
           }`}
         >
           A <strong>computer programmer</strong> specializing in{" "}
@@ -23,13 +23,21 @@ export default function TitlePage(props) {
           about creating exceptional as well as performance driven software.
         </p>
         <div className="scroll--div">
-          <span className="scroll--text">Scroll</span>
+          <span
+            className={`scroll--text ${
+              props.darkMode ? "dark--mode--seondary" : ""
+            }`}
+          >
+            Scroll
+          </span>
           <div className="line--div--container">
-            <span className="line"></span>
+            <span
+              className={`line ${props.darkMode ? "dark--mode--line" : ""}`}
+            ></span>
           </div>
         </div>
       </div>
-      <div className={`status ${props.darkMode ? "dark--mode--status" : ""}`}>
+      <div className={`status ${props.darkMode ? "dark--mode--seondary" : ""}`}>
         <div className="status-circle"></div>
         <p className="status--text">
           Currently looking for a Co-op/Internship for the 2024 Fall term

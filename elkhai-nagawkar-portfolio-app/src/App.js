@@ -59,24 +59,24 @@ export default function App() {
 
   return (
     <div>
-      <div className="cursor"></div>
+      <div className={`cursor ${mode ? "dark--mode--cursor" : ""}`}></div>
       <div onClick={handleMode} className="LightDark--div">
         <LightDark darkMode={mode} />
       </div>
-      <div className={`heropage--div`} ref={heroRef}>
+      <div className="heropage--div" ref={heroRef}>
         <HeroPage darkMode={mode} />
       </div>
       <div className="about--div" ref={aboutRef}>
-        <About />
+        <About darkMode={mode} />
       </div>
       <div className="toolbox--div" ref={toolboxRef}>
-        <Toolbox />
+        <Toolbox darkMode={mode} />
       </div>
       <div className="projects--div" ref={projectsRef}>
-        <Projects />
+        <Projects darkMode={mode} />
       </div>
       <div className="contact--div" ref={contactRef}>
-        <Contact />
+        <Contact darkMode={mode} />
       </div>
     </div>
   );
