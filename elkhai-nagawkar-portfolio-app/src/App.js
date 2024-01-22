@@ -7,6 +7,7 @@ import Toolbox from "./Sections/Toolbox";
 import Projects from "./Sections/Projects";
 import Contact from "./Sections/Contact";
 import LightDark from "./HelperComponents/lightDarkSVG";
+import Preloader from "./Sections/Preloader";
 
 export default function App() {
   const { ref: heroRef, inView: heroView } = useInView({ threshold: 0.5 });
@@ -57,9 +58,14 @@ export default function App() {
     setMode(!mode);
   }
 
+  setTimeout(() => {
+    document.querySelector(".body").style.overflow = "auto";
+  }, 3600);
+
   return (
-    <div>
+    <div className="body">
       <div className={`cursor ${mode ? "dark--mode--cursor" : ""}`}></div>
+      <Preloader />
       <div onClick={handleMode} className="LightDark--div">
         <LightDark darkMode={mode} />
       </div>

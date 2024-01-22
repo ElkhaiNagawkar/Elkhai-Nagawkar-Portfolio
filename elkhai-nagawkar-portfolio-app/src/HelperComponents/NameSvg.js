@@ -13,7 +13,7 @@ export default function Name(props) {
     <svg
       className={`name ${
         props.darkMode
-          ? "name dark--mode--name light--glow--animation"
+          ? "dark--mode--name light--glow--animation"
           : "name--fade"
       }`}
       width="1137"

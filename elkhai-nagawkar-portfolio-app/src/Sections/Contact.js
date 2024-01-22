@@ -13,16 +13,14 @@ export default function Contact(props) {
         <h1
           className={`contact--header ${
             inView ? "contact--header--animation" : ""
-          } ${
-            props.darkMode ? "dark--mode--seondary" : "dark--mode--seondary"
-          }`}
+          } ${props.darkMode ? "dark--mode--seondary" : ""}`}
         >
           Contact Me!
         </h1>
       </div>
       <div
         className={`thanks--div ${inView ? "thanks--div--animation" : ""} ${
-          props.darkMode ? "dark--mode--seondary" : "dark--mode--seondary"
+          props.darkMode ? "dark--mode--seondary" : ""
         }`}
       >
         <h4>
@@ -34,7 +32,7 @@ export default function Contact(props) {
         <div className="mail--section">
           <h3
             className={`${inView ? "mail--header--animation" : ""} ${
-              props.darkMode ? "dark--mode--seondary" : "dark--mode--seondary"
+              props.darkMode ? "dark--mode--seondary" : ""
             }`}
           >
             Mail{" "}
@@ -54,7 +52,7 @@ export default function Contact(props) {
           </li>
           <h3
             className={`${inView ? "mail--header--animation" : ""} ${
-              props.darkMode ? "dark--mode--seondary" : "dark--mode--seondary"
+              props.darkMode ? "dark--mode--seondary" : ""
             }`}
           >
             Rèsumè{" "}
@@ -78,7 +76,7 @@ export default function Contact(props) {
         <div className="socials--section">
           <h3
             className={`${inView ? "social--header--animation" : ""} ${
-              props.darkMode ? "dark--mode--seondary" : "dark--mode--seondary"
+              props.darkMode ? "dark--mode--seondary" : ""
             }`}
           >
             Socials{" "}

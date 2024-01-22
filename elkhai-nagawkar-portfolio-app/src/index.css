@@ -4,9 +4,10 @@
   box-sizing: border-box;
 }
 
-body {
+.body {
   background-color: #ebe6df;
   cursor: none;
+  overflow: hidden;
 }
 
 .cursor {
@@ -15,9 +16,56 @@ body {
   height: 12px;
   border-radius: 50%;
   background: rgba(93, 95, 86, 0.7);
-  z-index: 11;
+  z-index: 100;
   transform: translate(-50%, -50%);
   pointer-events: none;
+}
+
+.preloader--section {
+  height: 100vh;
+  width: 100%;
+  background: #ebe6df;
+  z-index: 20;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Supreme", sans-serif;
+  font-size: 1.5rem;
+}
+
+.preloader--container {
+  overflow: hidden;
+  display: flex;
+}
+
+.remove--opacity {
+  opacity: 0;
+  transition: 1s ease-out;
+}
+
+.remove--display {
+  display: none;
+}
+
+.preloader--name {
+  font-weight: 600;
+  opacity: 0;
+  animation: preloader-anim 2s forwards ease-out 0.5s;
+}
+
+.preloader--portfolio {
+  margin-left: 0.3rem;
+  opacity: 0;
+  animation: preloader-anim 1s forwards ease-out 1s;
+}
+
+.preloader--name--div {
+  animation: preloader-slideup-anim 1s forwards ease-out 3s;
+}
+
+.preloader--portfolio--div {
+  animation: preloader-slideup-anim 1s forwards ease-out 3.2s;
 }
 
 .Hero {
@@ -50,7 +98,7 @@ body {
   height: 1px;
   inset: 10% 0% 0% 5%;
   opacity: 0.5;
-  animation: line-anim 3.5s ease-in-out forwards;
+  animation: line-anim 3.5s ease-in-out forwards 3.6s;
 }
 
 .main--navbar {
@@ -64,7 +112,7 @@ body {
 .navbar--name {
   font-size: 20px;
   font-family: "Stardom", sans-serif;
-  animation: left-slide 2.5s forwards ease-out;
+  animation: left-slide 2.5s forwards ease-out 3.6s;
 }
 
 .name--home {
@@ -104,7 +152,7 @@ body {
   border-radius: 50px;
   z-index: -1;
   transition: 0.5s ease-in-out;
-  animation: top-slide 1s forwards ease-out;
+  animation: top-slide 1s forwards ease-out 3.6s;
 }
 
 .picker {
@@ -118,7 +166,7 @@ body {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
   overflow: hidden;
-  animation: top-slide 1s forwards ease-out;
+  animation: top-slide 1s forwards ease-out 3.6s;
   transition: 1s ease-out;
 }
 
@@ -168,12 +216,12 @@ body {
 
 #about,
 #projects {
-  animation: top-slide 2s ease-in-out forwards;
+  animation: top-slide 2s ease-in-out forwards 3.6s;
 }
 
 #contact,
 #toolbox {
-  animation: bottom-slide 2s ease-in-out forwards;
+  animation: bottom-slide 2s ease-in-out forwards 3.6s;
 }
 
 .hero--text {
@@ -191,7 +239,7 @@ body {
   -webkit-text-stroke-width: 2px;
   line-height: 9rem;
   font-family: "General Sans", sans-serif;
-  animation: top-slide 1.3s ease-in-out forwards;
+  animation: top-slide 1.3s ease-in-out forwards 3.6s;
   overflow: hidden;
 }
 
@@ -200,7 +248,7 @@ body {
   color: #535547;
   line-height: 1rem;
   margin-left: 0.4rem;
-  animation: name-fadeIn 1.3s ease-out forwards 5s;
+  animation: name-fadeIn 1.3s ease-out forwards 8.6s;
 }
 
 .name--fade {
@@ -210,73 +258,73 @@ body {
 .name path:nth-child(1) {
   stroke-dasharray: 279.6;
   stroke-dashoffset: 279.6;
-  animation: name-anim 1.5s ease-out forwards 1.6s;
+  animation: name-anim 1.5s ease-out forwards 5.2s;
 }
 
 .name path:nth-child(2) {
   stroke-dasharray: 424.92;
   stroke-dashoffset: 424.92;
-  animation: name-anim 2.5s ease-out forwards 1.9s;
+  animation: name-anim 2.5s ease-out forwards 5.5s;
 }
 .name path:nth-child(3) {
   stroke-dasharray: 491.16;
   stroke-dashoffset: 491.16;
-  animation: name-anim 1.5s ease-out forwards 2.2s;
+  animation: name-anim 1.5s ease-out forwards 5.8s;
 }
 .name path:nth-child(4) {
   stroke-dasharray: 544.13;
   stroke-dashoffset: 544.13;
-  animation: name-anim 1.5s ease-out forwards 2.5s;
+  animation: name-anim 1.5s ease-out forwards 6.1s;
 }
 .name path:nth-child(5) {
   stroke-dasharray: 424.93;
   stroke-dashoffset: 424.93;
-  animation: name-anim 2.5s ease-out forwards 2.8s;
+  animation: name-anim 2.5s ease-out forwards 6.4s;
 }
 .name path:nth-child(6) {
   stroke-dasharray: 540.14;
   stroke-dashoffset: 540.14;
-  animation: name-anim 2.5s ease-out forwards 1.8s;
+  animation: name-anim 2.5s ease-out forwards 5.4s;
 }
 .name path:nth-child(7) {
   stroke-dasharray: 424.93;
   stroke-dashoffset: 424.93;
-  animation: name-anim 1.5s ease-out forwards 2.1s;
+  animation: name-anim 1.5s ease-out forwards 5.7s;
 }
 .name path:nth-child(8) {
   stroke-dasharray: 584.25;
   stroke-dashoffset: 584.25;
-  animation: name-anim 2.5s ease-out forwards 1.8s;
+  animation: name-anim 2.5s ease-out forwards 5.4s;
 }
 .name path:nth-child(9) {
   stroke-dasharray: 313.3;
   stroke-dashoffset: 313.3;
-  animation: name-anim 1.5s ease-out forwards 2.8s;
+  animation: name-anim 1.5s ease-out forwards 6.4s;
 }
 .name path:nth-child(10) {
   stroke-dasharray: 424.93;
   stroke-dashoffset: 424.93;
-  animation: name-anim 1.5s ease-out forwards 2.5s;
+  animation: name-anim 1.5s ease-out forwards 6.1s;
 }
 .name path:nth-child(11) {
   stroke-dasharray: 461.64;
   stroke-dashoffset: 461.64;
-  animation: name-anim 1.5s ease-out forwards 2.2s;
+  animation: name-anim 1.5s ease-out forwards 5.8s;
 }
 .name path:nth-child(12) {
   stroke-dasharray: 491.16;
   stroke-dashoffset: 491.16;
-  animation: name-anim 1.5s ease-out forwards 1.9s;
+  animation: name-anim 1.5s ease-out forwards 5.5s;
 }
 .name path:nth-child(13) {
   stroke-dasharray: 264.6;
   stroke-dashoffset: 264.6;
-  animation: name-anim 1.5s ease-out forwards 1.6s;
+  animation: name-anim 1.5s ease-out forwards 5.2s;
 }
 .name path:nth-child(14) {
   stroke-dasharray: 532.44;
   stroke-dashoffset: 532.44;
-  animation: name-anim 1.5s ease-out forwards 1.3s;
+  animation: name-anim 1.5s ease-out forwards 4.9s;
 }
 
 .hero--description {
@@ -287,7 +335,7 @@ body {
   font-size: 1.2rem;
   line-height: 1.5rem;
   opacity: 0;
-  animation: bottom-slide-blur 1.5s ease-in-out forwards 5.2s;
+  animation: bottom-slide-blur 1.5s ease-in-out forwards 8.8s;
   transition: 1s ease-out;
 }
 
@@ -301,7 +349,7 @@ body {
   font-family: "Supreme", sans-serif;
   font-size: 1.1rem;
   opacity: 0;
-  animation: bottom-slide 1.5s ease-in-out forwards 5.5s;
+  animation: bottom-slide 1.5s ease-in-out forwards 9.1s;
 }
 
 .scroll--text {
@@ -322,7 +370,7 @@ body {
   background-color: black;
   width: 1px;
   height: 40px;
-  animation: scroll-line-anim 2s linear infinite 1s;
+  animation: scroll-line-anim 2s linear infinite 4.6s;
 }
 
 .status {
@@ -335,7 +383,7 @@ body {
   font-size: 1.2rem;
   line-height: 1.5rem;
   opacity: 0;
-  animation: bottom-slide-blur 1.5s ease-in-out forwards 5.8s;
+  animation: bottom-slide-blur 1.5s ease-in-out forwards 9.4s;
   transition: 1s ease-out;
 }
 
@@ -744,6 +792,7 @@ body {
 
 .dark--mode--cursor {
   background: rgb(197, 191, 191);
+  box-shadow: 0px 0px 40px 5px rgba(255, 255, 255, 1);
   width: 15px;
   height: 15px;
 }
@@ -799,6 +848,30 @@ body {
 .dark--mode--mail--link::after,
 .dark--mode--social--link::after {
   background: rgb(231, 229, 229);
+}
+
+@keyframes preloader-anim {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.3;
+  }
+  60% {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes preloader-slideup-anim {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100px);
+  }
 }
 
 @keyframes name-anim {
