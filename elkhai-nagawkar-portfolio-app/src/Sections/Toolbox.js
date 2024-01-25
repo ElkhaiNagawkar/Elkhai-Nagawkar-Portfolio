@@ -9,24 +9,53 @@ export default function Toolbox(props) {
     threshold: 0.3,
   });
 
+  if (props.theme === "dark") {
+    document
+      .querySelector(".main--toolbox")
+      ?.classList.add("dark--mode--primary--section");
+
+    document
+      .querySelectorAll(".toolbox--programming--hadear")
+      .forEach((element) => {
+        element?.classList.add("dark--mode--seondary");
+      });
+    document.querySelectorAll(".box").forEach((element) => {
+      element?.classList.add("dark--mode--box");
+    });
+    document
+      .querySelectorAll(".skill")
+      .forEach((element) => element?.classList.add("dark--mode--seondary"));
+  } else {
+    document
+      .querySelector(".main--toolbox")
+      ?.classList.remove("dark--mode--primary--section");
+    document
+      .querySelectorAll(".toolbox--programming--hadear")
+      .forEach((element) => {
+        element?.classList.remove("dark--mode--seondary");
+      });
+    document.querySelectorAll(".box").forEach((element) => {
+      element?.classList.remove("dark--mode--box");
+    });
+    document
+      .querySelectorAll(".skill")
+      .forEach((element) => element?.classList.remove("dark--mode--seondary"));
+  }
+
   return (
-    <div
-      className={`main--toolbox ${
-        props.darkMode ? "dark--mode--primary--section" : ""
-      }`}
-    >
+    <div className={`main--toolbox`}>
       <div className="programming--div">
         <h1
           className={`toolbox--programming--hadear ${
             inView ? "toolbox--prog--animation" : ""
-          } ${props.darkMode ? "dark--mode--seondary" : ""}`}
+          }`}
         >
           Programming languages
         </h1>
         <h1
           className={`toolbox--programming--hadear ${
             inView ? "toolbox--framework--animation" : ""
-          } ${props.darkMode ? "dark--mode--seondary" : ""}`}
+          }`}
         >
           Frameworks
         </h1>
@@ -35,32 +64,32 @@ export default function Toolbox(props) {
             className={`skills ${inView ? "skills--animation" : ""}`}
             ref={ref}
           >
-            <Box skill="C" darkMode={props.darkMode} />
-            <Box skill="C++" darkMode={props.darkMode} />
-            <Box skill="Java" darkMode={props.darkMode} />
-            <Box skill="SQL" darkMode={props.darkMode} />
-            <Box skill="HTML" darkMode={props.darkMode} />
-            <Box skill="CSS" darkMode={props.darkMode} />
-            <Box skill="Javascript" darkMode={props.darkMode} />
+            <Box skill="C" />
+            <Box skill="C++" />
+            <Box skill="Java" />
+            <Box skill="SQL" />
+            <Box skill="HTML" />
+            <Box skill="CSS" />
+            <Box skill="Javascript" />
           </div>
           <div
             className={`skills ${inView ? "skills--framework--animation" : ""}`}
           >
-            <Box skill="React" darkMode={props.darkMode} />
-            <Box skill="Tailwind" darkMode={props.darkMode} />
+            <Box skill="React" />
+            <Box skill="Tailwind" />
           </div>
         </div>
         <h1
           className={`toolbox--programming--hadear ${
             VersionInView ? "toolbox--prog--animation" : ""
-          } ${props.darkMode ? "dark--mode--seondary" : ""}`}
+          }`}
         >
           Version Control
         </h1>
         <h1
           className={`toolbox--programming--hadear ${
             VersionInView ? "toolbox--familiar--animation" : ""
-          } ${props.darkMode ? "dark--mode--seondary" : ""}`}
+          }`}
         >
           Some Familiarity
         </h1>
@@ -69,16 +98,16 @@ export default function Toolbox(props) {
           <div
             className={`skills ${VersionInView ? "version--animation" : ""}`}
           >
-            <Box skill="Git" darkMode={props.darkMode} />
-            <Box skill="GitHub" darkMode={props.darkMode} />
+            <Box skill="Git" />
+            <Box skill="GitHub" />
           </div>
           <div
             className={`skills ${VersionInView ? "familiar--animation" : ""}`}
             ref={VersionRef}
           >
-            <Box skill="C#" darkMode={props.darkMode} />
-            <Box skill="jQuery" darkMode={props.darkMode} />
-            <Box skill="Bootstrap" darkMode={props.darkMode} />
+            <Box skill="C#" />
+            <Box skill="jQuery" />
+            <Box skill="Bootstrap" />
           </div>
         </div>
       </div>

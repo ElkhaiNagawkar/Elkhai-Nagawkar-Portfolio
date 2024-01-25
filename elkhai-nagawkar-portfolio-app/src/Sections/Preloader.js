@@ -13,6 +13,10 @@ export default function Preloader() {
     setPreloadingDone(true);
   }, 4600);
 
+  setTimeout(() => {
+    document.querySelector(".body").style.overflow = "auto";
+  }, 3600);
+
   return (
     <div
       className={`preloader--section ${

@@ -10,6 +10,23 @@ import LightDark from "./HelperComponents/lightDarkSVG";
 import Preloader from "./Sections/Preloader";
 
 export default function App() {
+  const [theme, setTheme] = React.useState(
+    localStorage["theme"] ? localStorage.getItem("theme") : "light"
+  );
+  function handleMode() {
+    setTheme(function (prevTheme) {
+      return prevTheme === "light" ? "dark" : "light";
+    });
+  }
+
+  localStorage.setItem("theme", theme);
+
+  React.useEffect(() => {
+    if (localStorage["theme"]) {
+      setTheme(localStorage.getItem("theme"));
+    }
+  }, []);
+
   const { ref: heroRef, inView: heroView } = useInView({ threshold: 0.5 });
   const { ref: aboutRef, inView: aboutView } = useInView({ threshold: 0.7 });
   const { ref: toolboxRef, inView: toolboxView } = useInView({
@@ -51,38 +68,29 @@ export default function App() {
       cursor.style.top = e.clientY + "px";
     }
   });
-
-  const [mode, setMode] = React.useState(false);
-
-  function handleMode() {
-    setMode(!mode);
-  }
-
-  setTimeout(() => {
-    document.querySelector(".body").style.overflow = "auto";
-  }, 3600);
-
   return (
     <div className="body">
-      <div className={`cursor ${mode ? "dark--mode--cursor" : ""}`}></div>
+      <div
+        className={`cursor ${theme === "dark" ? "dark--mode--cursor" : ""}`}
+      ></div>
       <Preloader />
       <div onClick={handleMode} className="LightDark--div">
-        <LightDark darkMode={mode} />
+        <LightDark theme={theme} />
       </div>
       <div className="heropage--div" ref={heroRef}>
-        <HeroPage darkMode={mode} />
+        <HeroPage theme={theme} />
       </div>
       <div className="about--div" ref={aboutRef}>
-        <About darkMode={mode} />
+        <About theme={theme} />
       </div>
       <div className="toolbox--div" ref={toolboxRef}>
-        <Toolbox darkMode={mode} />
+        <Toolbox theme={theme} />
       </div>
       <div className="projects--div" ref={projectsRef}>
-        <Projects darkMode={mode} />
+        <Projects theme={theme} />
       </div>
       <div className="contact--div" ref={contactRef}>
-        <Contact darkMode={mode} />
+        <Contact theme={theme} />
       </div>
     </div>
   );

@@ -3,17 +3,36 @@ import { useInView } from "react-intersection-observer";
 export default function About(props) {
   const { ref, inView } = useInView({ triggerOnce: true });
 
+  if (props.theme === "dark") {
+    document
+      .querySelector(".about--section")
+      ?.classList.add("dark--mode--secondary--section");
+    document.querySelectorAll(".about--header").forEach((element) => {
+      element?.classList.add("dark--mode--seondary");
+    });
+
+    document.querySelectorAll(".about--paragraph").forEach((element) => {
+      element?.classList.add("dark--mode--seondary");
+    });
+  } else {
+    document
+      .querySelector(".about--section")
+      ?.classList.remove("dark--mode--secondary--section");
+    document.querySelectorAll(".about--header").forEach((element) => {
+      element?.classList.remove("dark--mode--seondary");
+    });
+    document.querySelectorAll(".about--paragraph").forEach((element) => {
+      element?.classList.remove("dark--mode--seondary");
+    });
+  }
+
   return (
-    <div
-      className={`about--section ${
-        props.darkMode ? "dark--mode--secondary--section" : ""
-      }`}
-    >
+    <div className={`about--section`}>
       <div className="about--header--div">
         <h1
           className={`about--header ${
             inView ? "about--header--animation" : ""
-          } ${props.darkMode ? "dark--mode--seondary" : ""}`}
+          }`}
           ref={ref}
         >
           About
@@ -23,7 +42,7 @@ export default function About(props) {
         <p
           className={`about--paragraph ${
             inView ? "about--paragraph--animation" : ""
-          } ${props.darkMode ? "dark--mode--seondary" : ""}`}
+          }`}
         >
           My name is Elkhai pronounced (el-kai) and im currently a programming
           student attending Fanshawe College. Since a young age I was always
@@ -39,7 +58,7 @@ export default function About(props) {
         <h1
           className={`about--header ${
             inView ? "funfact--header--animation" : ""
-          } ${props.darkMode ? "dark--mode--seondary" : ""}`}
+          }`}
         >
           Fun fact
         </h1>
@@ -48,7 +67,7 @@ export default function About(props) {
         <p
           className={`about--paragraph ${
             inView ? "funfact--paragraph--animation" : ""
-          } ${props.darkMode ? "dark--mode--seondary" : ""}`}
+          }`}
         >
           When I am not at my computer I enjoy going to the gym with my younger
           brother as well as discussing random topics that are on our minds!

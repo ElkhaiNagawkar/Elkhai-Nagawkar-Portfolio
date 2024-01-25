@@ -9,13 +9,17 @@ export default function Name(props) {
     }
   };
 
+  if (props.theme === "dark") {
+    document.querySelector(".name")?.classList.add("dark--mode--name--fade");
+    document.querySelector(".name")?.classList.remove("name--fade");
+  } else {
+    document.querySelector(".name")?.classList.remove("dark--mode--name--fade");
+    document.querySelector(".name")?.classList.add("name--fade");
+  }
+
   return (
     <svg
-      className={`name ${
-        props.darkMode
-          ? "dark--mode--name light--glow--animation"
-          : "name--fade"
-      }`}
+      className={`name`}
       width="1137"
       height="144"
       viewBox="0 0 1137 144"

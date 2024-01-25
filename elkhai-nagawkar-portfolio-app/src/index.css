@@ -168,6 +168,7 @@
   overflow: hidden;
   animation: top-slide 1s forwards ease-out 3.6s;
   transition: 1s ease-out;
+  opacity: 0;
 }
 
 .picker:last-child {
@@ -241,6 +242,7 @@
   font-family: "General Sans", sans-serif;
   animation: top-slide 1.3s ease-in-out forwards 3.6s;
   overflow: hidden;
+  opacity: 0;
 }
 
 .name {
@@ -828,8 +830,12 @@
   background-color: #ffffff;
 }
 
+.dark--mode--name--fade {
+  animation: darkMode-name-fadeIn 1.3s ease-out forwards;
+}
+
 .light--glow--animation {
-  animation: light-on-anim 4s forwards ease-out;
+  animation: darkMode-name-fadeIn 4s forwards ease-out 8.6s;
 }
 
 .dark--mode--box {
@@ -886,6 +892,16 @@
   }
   to {
     fill: rgb(168, 172, 152);
+  }
+}
+
+@keyframes darkMode-name-fadeIn {
+  from {
+    fill: transparent;
+  }
+  to {
+    fill: #f8f8ff;
+    filter: drop-shadow(0 0 5rem white);
   }
 }
 
@@ -964,7 +980,7 @@
   }
 }
 
-@keyframes light-on-anim {
+/* @keyframes light-on-anim {
   0% {
     filter: drop-shadow(0 0 5rem white);
     fill: transparent;
@@ -988,4 +1004,4 @@
     filter: drop-shadow(0 0 10rem white);
     fill: #f8f8ff;
   }
-}
+} */
