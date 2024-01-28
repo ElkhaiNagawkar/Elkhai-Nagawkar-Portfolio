@@ -1,7 +1,20 @@
 import React from "react";
 
-export default function Preloader() {
+export default function Preloader(props) {
   const [preloadingDone, setPreloadingDone] = React.useState(false);
+
+  if (props.theme === "dark") {
+    document
+      .querySelector(".preloader--section")
+      ?.classList.add("dark--mode--primary--section", "dark--mode--seondary");
+  } else {
+    document
+      .querySelector(".preloader--section")
+      ?.classList.remove(
+        "dark--mode--primary--section",
+        "dark--mode--seondary"
+      );
+  }
 
   setTimeout(() => {
     document
@@ -30,6 +43,11 @@ export default function Preloader() {
         <div className="preloader--portfolio--div">
           <span className="preloader--portfolio"> Portfolio</span>
         </div>
+      </div>
+      <div className="copyright--div">
+        <p className="copyright--para">
+          Copyright © 2024 Elkhai Nagawkar All rights reserved.
+        </p>
       </div>
     </div>
   );

@@ -28,7 +28,8 @@
   z-index: 20;
   position: fixed;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   font-family: "Supreme", sans-serif;
   font-size: 1.5rem;
@@ -37,6 +38,7 @@
 .preloader--container {
   overflow: hidden;
   display: flex;
+  margin-top: 28.5rem;
 }
 
 .remove--opacity {
@@ -65,7 +67,18 @@
 }
 
 .preloader--portfolio--div {
-  animation: preloader-slideup-anim 1s forwards ease-out 3.2s;
+  animation: preloader-slideup-anim 1s forwards ease-out 3.1s;
+}
+
+.copyright--div {
+  font-size: 0.9rem;
+  animation: preloader-anim 2s forwards ease-out 1s;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.copyright--para {
+  animation: preloader-slideup-anim 1s forwards ease-out 3.1s;
 }
 
 .Hero {
@@ -651,6 +664,7 @@
 }
 
 .contact--section {
+  font-family: "Supreme", sans-serif;
   padding: 4rem 6rem;
   height: 50vh;
   position: relative;
@@ -694,7 +708,6 @@
 }
 
 .mail--section {
-  font-family: "Supreme", sans-serif;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -705,7 +718,6 @@
 }
 
 .socials--section {
-  font-family: "Supreme", sans-serif;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -744,7 +756,7 @@
   position: absolute;
   width: 0rem;
   height: 0rem;
-  background: black;
+  background: #686858;
   display: flex;
   transition: 0.5s ease-out;
 }
@@ -774,6 +786,14 @@
 
 .links--animation {
   animation: top-slide 1s forwards ease-out 1.5s;
+}
+
+.copyright--footer {
+  display: flex;
+  margin-left: -5.7rem;
+  margin-top: 5.9rem;
+  color: #686858;
+  font-size: 0.8rem;
 }
 
 /* Dark Theme Colours */

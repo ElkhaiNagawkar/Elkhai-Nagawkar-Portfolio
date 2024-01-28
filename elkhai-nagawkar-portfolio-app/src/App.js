@@ -73,7 +73,7 @@ export default function App() {
       <div
         className={`cursor ${theme === "dark" ? "dark--mode--cursor" : ""}`}
       ></div>
-      <Preloader />
+      <Preloader theme={theme} />
       <div onClick={handleMode} className="LightDark--div">
         <LightDark theme={theme} />
       </div>

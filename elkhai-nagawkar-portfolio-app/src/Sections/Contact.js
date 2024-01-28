@@ -37,6 +37,10 @@ export default function Contact(props) {
           "dark--mode--social--link"
         )
       );
+
+    document
+      .querySelector(".copyright--footer")
+      ?.classList.add("dark--mode--seondary");
   } else {
     document
       .querySelector(".contact--section")
@@ -73,6 +77,9 @@ export default function Contact(props) {
           "dark--mode--social--link"
         )
       );
+    document
+      .querySelector(".copyright--footer")
+      ?.classList.remove("dark--mode--seondary");
   }
 
   return (
@@ -148,6 +155,9 @@ export default function Contact(props) {
           </li>
         </div>
       </div>
+      <footer className="copyright--footer">
+        <p>Copyright © 2024 Elkhai Nagawkar All rights reserved</p>
+      </footer>
     </div>
   );
 }
