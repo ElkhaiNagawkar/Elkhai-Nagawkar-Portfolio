@@ -1,9 +1,30 @@
 import React from "react";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { HiMiniXMark } from "react-icons/hi2";
 
 export default function Navbar(props) {
+  const [windowSize, setWindowSize] = React.useState(window.screen.width);
+  window.addEventListener("resize", () => {
+    setWindowSize(window.screen.width);
+  });
+
   function handleClick(e) {
-    const element = document.querySelector(`.${e.target.id}--div`);
-    element.scrollIntoView({ behavior: "smooth", block: "center" });
+    if (windowSize > 480) {
+      const element = document.querySelector(`.${e.target.id}--div`);
+      element.scrollIntoView({ behavior: "smooth", block: "center" });
+    } else {
+      document.querySelector(".full--nav")?.classList.toggle("show--navbar");
+      document
+        .querySelector(".main--navbar")
+        ?.classList.toggle("hide--main--navbar");
+      document
+        .querySelector(".navbar--hamburger")
+        ?.classList.toggle("hide--ham");
+      if (e.target.id) {
+        const element = document.querySelector(`.${e.target.id}--div`);
+        element.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    }
   }
 
   if (props.theme === "dark") {
@@ -18,6 +39,9 @@ export default function Navbar(props) {
     document
       .querySelector(".main--navbar")
       ?.classList.add("dark--mode--main--navbar");
+    document
+      .querySelector(".navbar--hamburger")
+      ?.classList.add("dark--mode--seondary");
   } else {
     document.querySelector(".navbar")?.classList.remove("dark--mode--navbar");
     document
@@ -35,6 +59,9 @@ export default function Navbar(props) {
     document
       .querySelector(".main--navbar")
       ?.classList.remove("dark--mode--main--navbar");
+    document
+      .querySelector(".navbar--hamburger")
+      ?.classList.remove("dark--mode--seondary");
   }
 
   return (
@@ -55,8 +82,14 @@ export default function Navbar(props) {
             <span className={`navbar--name`} id="heropage">
               agawkar
             </span>
+            <div className="navbar--hamburger">
+              <RxHamburgerMenu />
+            </div>
           </div>
-          <ul className={`main--navbar`}>
+          <ul className={`main--navbar hide--main--navbar`}>
+            <li onClick={handleClick} id="heropage" className="home--mobile">
+              Home
+            </li>
             <li onClick={handleClick} id="about">
               About
             </li>
