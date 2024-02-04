@@ -217,6 +217,7 @@
 .LightDark--div {
   position: fixed;
   inset: 5.8% 0% 0% 95%;
+  z-index: 50;
 }
 
 .light--dark {
@@ -486,6 +487,9 @@
 
 .programming--div {
   overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   height: 650px;
 }
 
@@ -494,9 +498,8 @@
   font-size: 3rem;
   color: #8c8c75;
   letter-spacing: -1px;
-  display: inline-block;
-  padding-right: 18rem;
   padding-left: 0.5rem;
+  width: auto;
   opacity: 0;
 }
 
@@ -506,12 +509,11 @@
 
 .skills {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 150px);
   grid-template-rows: repeat(2, 1fr);
   gap: 1rem;
   font-family: "Supreme", sans-serif;
   font-size: 1.2rem;
-  width: 35rem;
   padding: 1.5rem 0rem 5rem 0.5rem;
   opacity: 0;
 }
@@ -999,6 +1001,96 @@
   .about--paragraph {
     width: 90vw;
     font-size: 1rem;
+  }
+
+  .programming--div {
+    height: 110vh;
+    grid-template-columns: repeat(1, 1fr);
+    overflow: visible;
+  }
+
+  .main--toolbox {
+    padding: 1rem 0.5rem 1rem 0.5rem;
+  }
+
+  .toolbox--programming--hadear {
+    font-size: 2rem;
+    display: block;
+    padding-bottom: 1rem;
+  }
+
+  .toolbox--container:nth-child(2) {
+    margin-top: 5rem;
+  }
+
+  .skills {
+    padding: 0;
+    font-size: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(auto, 1fr);
+    width: auto;
+  }
+
+  .all-skills {
+    display: block;
+  }
+
+  .projects--section {
+    padding: 2rem 1rem 1rem 1rem;
+  }
+
+  .projects--header {
+    font-size: 2rem;
+  }
+
+  .projects {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(auto-fill, 1fr);
+  }
+
+  .all--projects:nth-child(1) {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+  }
+  .all--projects:nth-child(2) {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+  }
+
+  .projectImg {
+    max-width: auto;
+    max-height: auto;
+  }
+
+  .project--description,
+  .resources--used,
+  .project--title {
+    display: none;
+  }
+
+  .project--title--div:hover {
+    opacity: 0;
+  }
+
+  .contact--section {
+    padding: 2rem 0.5rem 1rem 0.5rem;
+    height: 75vh;
+  }
+
+  .links {
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 1rem;
+  }
+
+  .thanks--div {
+    inset: 75% 0% 0% 2%;
+    font-size: 1.5rem;
+    width: 25rem;
+  }
+
+  .copyright--footer {
+    margin-left: -0.2rem;
+    margin-top: 11rem;
   }
 }
 
