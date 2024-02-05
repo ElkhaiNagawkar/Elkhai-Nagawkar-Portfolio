@@ -10,6 +10,10 @@ import LightDark from "./HelperComponents/lightDarkSVG";
 import Preloader from "./Sections/Preloader";
 
 export default function App() {
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  };
+
   const [theme, setTheme] = React.useState(
     localStorage["theme"] ? localStorage.getItem("theme") : "light"
   );
@@ -51,13 +55,13 @@ export default function App() {
     if (heroView) {
       indicatorPos(sec);
     } else if (aboutView) {
-      indicatorPos(item[0]);
-    } else if (toolboxView) {
       indicatorPos(item[1]);
-    } else if (projectsView) {
+    } else if (toolboxView) {
       indicatorPos(item[2]);
-    } else if (contactView) {
+    } else if (projectsView) {
       indicatorPos(item[3]);
+    } else if (contactView) {
+      indicatorPos(item[4]);
     }
   }, [heroView, aboutView, toolboxView, projectsView, contactView]);
 

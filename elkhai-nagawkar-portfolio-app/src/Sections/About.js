@@ -44,14 +44,14 @@ export default function About(props) {
             inView ? "about--paragraph--animation" : ""
           }`}
         >
-          My name is Elkhai pronounced (el-kai) and im currently a programming
+          My name is Elkhai pronounced el-kai and im currently a programming
           student attending Fanshawe College. Since a young age I was always
           intrigued and interested in technology especially the software aspact
-          of it and how it actully worked. Fast forward to 2024 and I now
-          understand how those softwares, websites, and applications are
-          created! What excites me most about being a programmer is the
-          problem-solving aspect of it due to the accomplishment you feel when
-          the problem is solved.
+          of it and how it actully worked in the background. Fast forward to
+          2024 and I'm now learning and understanding how those softwares,
+          websites, and applications are created! What excites me most about
+          being a programmer is the problem-solving aspect of it due to the
+          accomplishment you feel when the problem is solved.
         </p>
       </div>
       <div className="about--header--div">
@@ -70,7 +70,9 @@ export default function About(props) {
           }`}
         >
           When I am not at my computer I enjoy going to the gym with my younger
-          brother as well as discussing random topics that are on our minds!
+          brother as well as discussing random topics that are on our mind like
+          coding, tech products that have recently been released, video games,
+          and what our goals for the future are!
         </p>
       </div>
     </div>

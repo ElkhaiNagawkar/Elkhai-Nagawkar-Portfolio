@@ -29,7 +29,8 @@
   height: 100vh;
   width: 100%;
   background: #ebe6df;
-  z-index: 20;
+  color: #8c8c75;
+  z-index: 99;
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -37,6 +38,7 @@
   align-items: center;
   font-family: "Supreme", sans-serif;
   font-size: 1.5rem;
+  color: #686858;
 }
 
 .preloader--container {
@@ -216,7 +218,7 @@
 
 .LightDark--div {
   position: fixed;
-  inset: 5.8% 0% 0% 95%;
+  inset: 5.8% 2% 90% 95%;
   z-index: 50;
 }
 
@@ -456,7 +458,7 @@
 
 .about--paragraph {
   font-family: "Supreme", sans-serif;
-  color: #dadace;
+  color: #dbdbd1;
   font-weight: 500;
   width: 50rem;
   font-size: 1.1rem;
@@ -652,7 +654,7 @@
 .project--description {
   width: 35rem;
   font-family: "Supreme", sans-serif;
-  color: #dadace;
+  color: #e0e0db;
   font-weight: 500;
 }
 
@@ -687,6 +689,11 @@
   transition: 1s ease-out;
 }
 
+.contant--container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .header--div,
 .thanks--div {
   font-family: "General Sans", sans-serif;
@@ -704,11 +711,9 @@
 }
 
 .thanks--div {
-  position: absolute;
   font-size: 0.1rem;
   width: 30rem;
   height: 10rem;
-  inset: 39% 0% 0% 72%;
   font-size: 2rem;
   opacity: 0;
 }
@@ -720,7 +725,9 @@
 .links {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  margin-top: 3rem;
+  row-gap: 1rem;
+  column-gap: 20rem;
+  margin-top: 1rem;
 }
 
 .mail--section {
@@ -807,7 +814,7 @@
 .copyright--footer {
   display: flex;
   margin-left: -5.7rem;
-  margin-top: 5.9rem;
+  margin-top: 7.8rem;
   color: #686858;
   font-size: 0.8rem;
 }
@@ -932,7 +939,7 @@
   }
 
   .LightDark--div {
-    inset: 5.8% 0% 0% 80%;
+    inset: 5.8% 11% 90% 80%;
   }
 
   #about,
@@ -963,7 +970,7 @@
   }
 
   .name {
-    width: 25rem;
+    width: 23.5rem;
     margin-left: 0.5rem;
   }
 
@@ -987,7 +994,7 @@
 
   .about--section {
     padding: 4rem 0rem 2rem 1rem;
-    height: 60vh;
+    height: 70vh;
   }
 
   .about--paragraph--div {
@@ -996,6 +1003,7 @@
 
   .about--header {
     font-size: 2rem;
+    margin-bottom: 1rem;
   }
 
   .about--paragraph {
@@ -1004,7 +1012,7 @@
   }
 
   .programming--div {
-    height: 110vh;
+    height: 130vh;
     grid-template-columns: repeat(1, 1fr);
     overflow: visible;
   }
@@ -1077,6 +1085,10 @@
     height: 75vh;
   }
 
+  .contant--container {
+    flex-direction: column;
+  }
+
   .links {
     grid-template-columns: repeat(1, 1fr);
     row-gap: 1rem;
@@ -1090,9 +1102,63 @@
 
   .copyright--footer {
     margin-left: -0.2rem;
-    margin-top: 11rem;
+    margin-top: 2.8rem;
   }
 }
+
+/* Tablet and Laptop */
+@media screen and (min-width: 786px) and (max-width: 1279px) {
+  .preloader--container {
+    margin-top: 23.5rem;
+  }
+
+  .full--nav {
+    inset: 4% 20% 89% 20%;
+  }
+
+  .greeting {
+    font-size: 5rem;
+  }
+
+  .name {
+    width: 60rem;
+  }
+  .programming--div {
+    column-gap: 5rem;
+    overflow: visible;
+  }
+
+  .toolbox--programming--hadear {
+    font-size: 2.2rem;
+  }
+
+  .skills {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(auto, 1fr);
+  }
+
+  .all-skills {
+    display: block;
+  }
+
+  .contact--section {
+    height: 80vh;
+  }
+
+  .thanks--div {
+    inset: 29% 0% 0% 60%;
+  }
+
+  .links {
+    column-gap: 1rem;
+  }
+
+  .copyright--footer {
+    margin-top: 16.6rem;
+  }
+}
+
+/* Animations */
 
 @keyframes preloader-anim {
   0% {

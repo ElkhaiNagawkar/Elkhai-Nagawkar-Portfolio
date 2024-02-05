@@ -59,12 +59,28 @@ export default function Projects(props) {
         <div
           className={`all--projects ${inView ? "first--project--anim" : ""}`}
         >
-          <ProjectBox title="Portfolio" projectImg="ElkhaiNagawkarPort.png" />
+          <ProjectBox
+            projectImg="ElkhaiNagawkarPort.png"
+            title="Portfolio"
+            descrition="This is the first project I have worked on independintly after
+            learning React. It aided me in further understanding how React works
+            as well as helped me polish and further improve my CSS and Javascript
+            skills. I really enjoyed creating this project as it reminds me of how
+            far I have come since begining my programming journey."
+          />
         </div>
         <div
           className={`all--projects ${inView ? "second--project--anim" : ""}`}
         >
-          <ProjectBox title="Portfolio" projectImg="test.png" />
+          <ProjectBox
+            projectImg="test.png"
+            title="Portfolio"
+            descrition="This is the first project I have worked on independintly after
+          learning React. It aided me in further understanding how React works
+          as well as helped me polish and further improve my CSS and Javascript
+          skills. I really enjoyed creating this project as it reminds me of how
+          far I have come since begining my programming journey."
+          />
         </div>
       </div>
     </div>
