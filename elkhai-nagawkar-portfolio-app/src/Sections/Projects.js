@@ -67,19 +67,17 @@ export default function Projects(props) {
             as well as helped me polish and further improve my CSS and Javascript
             skills. I really enjoyed creating this project as it reminds me of how
             far I have come since begining my programming journey."
+            resources="HTML • CSS • Javascript • React • Git • GitHub"
           />
         </div>
         <div
           className={`all--projects ${inView ? "second--project--anim" : ""}`}
         >
           <ProjectBox
-            projectImg="test.png"
-            title="Portfolio"
-            descrition="This is the first project I have worked on independintly after
-          learning React. It aided me in further understanding how React works
-          as well as helped me polish and further improve my CSS and Javascript
-          skills. I really enjoyed creating this project as it reminds me of how
-          far I have come since begining my programming journey."
+            projectImg="WeatherApp.png"
+            title="Weather App"
+            descrition="This is the first project where I used Tailwind CSS to style all elements. This project taught me how to use the Fetch API with React in contrast to vanilla Javascript. It also taught me how to recieve data from the fetch request convert it from a JSON and display or use the data retrived to make another fetch request."
+            resources="HTML • CSS • Javascript • React • Git • GitHub"
           />
         </div>
       </div>
