@@ -485,6 +485,7 @@
 .main--toolbox {
   padding: 4rem 6rem;
   transition: 1s ease-out;
+  color: #8c8c75;
 }
 
 .programming--div {
@@ -495,17 +496,16 @@
   height: 650px;
 }
 
-.toolbox--programming--hadear {
+.toolbox--programming--header {
   font-family: "General Sans", sans-serif;
   font-size: 3rem;
-  color: #8c8c75;
   letter-spacing: -1px;
   padding-left: 0.5rem;
   width: auto;
   opacity: 0;
 }
 
-.toolbox--programming--hadear:nth-child(4) {
+.toolbox--programming--header:nth-child(4) {
   padding-right: 30rem;
 }
 
@@ -575,7 +575,7 @@
 
 .projects--section {
   background-color: #8c8c75;
-  padding: 4rem 6rem;
+  padding: 4rem 6rem 8rem 6rem;
   transition: 1s ease-out;
 }
 
@@ -595,7 +595,7 @@
 }
 
 .projects {
-  margin-top: 5rem;
+  margin-top: 2rem;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(4, 200px);
@@ -623,6 +623,16 @@
   grid-column: 6 / 9;
 }
 
+.all--projects:nth-child(3) {
+  grid-row: 3 / 6;
+  grid-column: 1 / 5;
+}
+
+.all--projects:nth-child(4) {
+  grid-row: 3 / 6;
+  grid-column: 5 / 9;
+}
+
 .projectImg {
   width: 100%;
   height: 100%;
@@ -644,7 +654,7 @@
   opacity: 1;
 }
 
-.test {
+.hover--box {
   border: 3px solid white;
   border-radius: 25px;
   width: 100%;
@@ -652,9 +662,10 @@
   top: 0;
   position: absolute;
   transition: 0.5s ease-out;
+  z-index: 10;
 }
 
-.test:hover {
+.hover--box:hover {
   scale: 0.9;
 }
 
@@ -692,7 +703,15 @@
 }
 
 .second--project--anim {
-  animation: bottom-slide-blur 1s forwards ease-out 1.5s;
+  animation: bottom-slide-blur 1s forwards ease-out 1.3s;
+}
+
+.third--project--anim {
+  animation: bottom-slide-blur 1s forwards ease-out 1.6s;
+}
+
+.fourth--project--anim {
+  animation: bottom-slide-blur 1s forwards ease-out 1.9s;
 }
 
 .contact--section {
@@ -1031,7 +1050,7 @@
     padding: 1rem 0.5rem 1rem 0.5rem;
   }
 
-  .toolbox--programming--hadear {
+  .toolbox--programming--header {
     font-size: 2rem;
     display: block;
     padding-bottom: 1rem;
@@ -1054,7 +1073,7 @@
   }
 
   .projects--section {
-    padding: 2rem 1rem 1rem 1rem;
+    padding: 2rem 1rem 4rem 1rem;
   }
 
   .projects--header {
@@ -1062,32 +1081,49 @@
   }
 
   .projects {
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(auto-fill, 1fr);
-  }
-
-  .all--projects:nth-child(1) {
-    grid-row: 1 / 2;
-    grid-column: 1 / 2;
-  }
-  .all--projects:nth-child(2) {
-    grid-row: 2 / 3;
-    grid-column: 1 / 2;
+    display: flex;
+    flex-direction: column;
   }
 
   .projectImg {
     max-width: auto;
-    max-height: auto;
+    max-height: 250px;
+    height: 215px;
   }
 
-  .project--description,
-  .resources--used,
+  .project {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project--title--div {
+    position: relative;
+    padding: 0;
+    opacity: 1;
+    background: transparent;
+    height: auto;
+    padding-left: 0.3rem;
+    display: block;
+  }
+
   .project--title {
-    display: none;
+    padding: 0;
+    padding-top: 1rem;
   }
 
-  .project--title--div:hover {
-    opacity: 0;
+  .project--description {
+    padding: 0;
+    padding-top: 0.5rem;
+    width: 25rem;
+  }
+
+  .resources--used {
+    padding: 0;
+    padding-top: 0.8rem;
+  }
+
+  .hover--box {
+    display: none;
   }
 
   .contact--section {
@@ -1138,7 +1174,7 @@
     overflow: visible;
   }
 
-  .toolbox--programming--hadear {
+  .toolbox--programming--header {
     font-size: 2.2rem;
   }
 

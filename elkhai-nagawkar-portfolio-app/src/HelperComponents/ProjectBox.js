@@ -12,7 +12,7 @@ export default function ProjectBox(props) {
             <h4>{props.resources}</h4>
           </div>
         </div>
-        <div className="test"></div>
+        <div className="hover--box"></div>
       </div>
     </div>
   );

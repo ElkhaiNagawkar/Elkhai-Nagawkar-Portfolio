@@ -77,7 +77,28 @@ export default function Projects(props) {
             projectImg="WeatherApp.png"
             title="Weather App"
             descrition="This is the first project where I used Tailwind CSS to style all elements. This project taught me how to use the Fetch API with React in contrast to vanilla Javascript. It also taught me how to recieve data from the fetch request convert it from a JSON and display or use the data retrived to make another fetch request."
-            resources="HTML • CSS • Javascript • React • Git • GitHub"
+            resources="HTML • Tailwind CSS • Javascript • React • Git • GitHub"
+          />
+        </div>
+        <div
+          className={`all--projects ${inView ? "third--project--anim" : ""}`}
+        >
+          <ProjectBox
+            projectImg="BankApp.png"
+            title="Bank App"
+            descrition="With this project I wanted to see how far I could push myself with how much I have learned about Javascript and React. This app tries to replicate a bank app by letting you create/delete an account, add bank cards, make deposits, add expenses, sending money to other accounts, and requesting/paying off loans. This project further aided me in understanding how session storage, and object arrays work."
+            resources="HTML • Tailwind CSS • Javascript • React • Git • GitHub"
+          />
+        </div>
+
+        <div
+          className={`all--projects ${inView ? "fourth--project--anim" : ""}`}
+        >
+          <ProjectBox
+            projectImg="XploreDrivingProject.png"
+            title="Xplore Driving School Website"
+            descrition="This is website I created for my family business. I created this website with the help of GoDaddy Website Builder software. Although this website was not coded by me I gained experience and knowledge of how website building softwares work. Furthermore, I needed to conduct research on SEO to make the website index higher on Google."
+            resources="GoDaddy Website Builder"
           />
         </div>
       </div>

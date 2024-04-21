@@ -14,11 +14,6 @@ export default function Toolbox(props) {
       .querySelector(".main--toolbox")
       ?.classList.add("dark--mode--primary--section");
 
-    document
-      .querySelectorAll(".toolbox--programming--hadear")
-      .forEach((element) => {
-        element?.classList.add("dark--mode--seondary");
-      });
     document.querySelectorAll(".box").forEach((element) => {
       element?.classList.add("dark--mode--box");
     });
@@ -30,7 +25,7 @@ export default function Toolbox(props) {
       .querySelector(".main--toolbox")
       ?.classList.remove("dark--mode--primary--section");
     document
-      .querySelectorAll(".toolbox--programming--hadear")
+      .querySelectorAll(".toolbox--programming--header")
       .forEach((element) => {
         element?.classList.remove("dark--mode--seondary");
       });
@@ -47,9 +42,9 @@ export default function Toolbox(props) {
       <div className="programming--div">
         <div className="toolbox--container">
           <h1
-            className={`toolbox--programming--hadear ${
+            className={`toolbox--programming--header ${
               inView ? "toolbox--prog--animation" : ""
-            }`}
+            } ${props.theme === "dark" ? "dark--mode--seondary" : ""}`}
           >
             Programming languages
           </h1>
@@ -71,9 +66,9 @@ export default function Toolbox(props) {
         </div>
         <div className="toolbox--container">
           <h1
-            className={`toolbox--programming--hadear ${
+            className={`toolbox--programming--header ${
               inView ? "toolbox--framework--animation" : ""
-            }`}
+            } ${props.theme === "dark" ? "dark--mode--seondary" : ""}`}
           >
             Frameworks
           </h1>
@@ -90,9 +85,9 @@ export default function Toolbox(props) {
         </div>
         <div className="toolbox--container">
           <h1
-            className={`toolbox--programming--hadear ${
+            className={`toolbox--programming--header ${
               VersionInView ? "toolbox--prog--animation" : ""
-            }`}
+            } ${props.theme === "dark" ? "dark--mode--seondary" : ""}`}
           >
             Version Control
           </h1>
@@ -108,14 +103,16 @@ export default function Toolbox(props) {
         </div>
         <div className="toolbox--container">
           <h1
-            className={`toolbox--programming--hadear ${
+            className={`toolbox--programming--header ${
               VersionInView ? "toolbox--familiar--animation" : ""
-            }`}
+            } ${props.theme === "dark" ? "dark--mode--seondary" : ""}`}
           >
             Some Familiarity
           </h1>
           <div
-            className={`skills ${VersionInView ? "familiar--animation" : ""}`}
+            className={`skills ${VersionInView ? "familiar--animation" : ""} ${
+              props.theme === "dark" ? "dark--mode--seondary" : ""
+            }`}
             ref={VersionRef}
           >
             <Box skill="C#" />

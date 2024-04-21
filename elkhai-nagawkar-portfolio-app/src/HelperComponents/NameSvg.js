@@ -22,8 +22,6 @@ export default function Name(props) {
     name?.classList.remove("light--glow--animation");
   }
 
-  console.log();
-
   return (
     <svg
       className={`name light--glow--animation`}

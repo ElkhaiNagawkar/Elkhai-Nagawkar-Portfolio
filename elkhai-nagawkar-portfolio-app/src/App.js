@@ -72,6 +72,7 @@ export default function App() {
       cursor.style.top = e.clientY + "px";
     }
   });
+
   return (
     <div className="body">
       <div
