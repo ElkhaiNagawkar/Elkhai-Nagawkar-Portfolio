@@ -1,4 +1,5 @@
 import React from "react";
+import { Analytics } from "@vercel/analytics/react";
 import "./index.css";
 import HeroPage from "./Sections/HeroPage";
 import About from "./Sections/About";
@@ -97,6 +98,7 @@ export default function App() {
       <div className="contact--div" ref={contactRef}>
         <Contact theme={theme} />
       </div>
+      <Analytics />
     </div>
   );
 }

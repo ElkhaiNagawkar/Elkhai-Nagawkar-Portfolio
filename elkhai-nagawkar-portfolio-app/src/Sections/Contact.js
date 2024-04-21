@@ -114,7 +114,7 @@ export default function Contact(props) {
             <li className="mail--list">
               <a
                 className={`mail--link ${inView ? "links--animation" : ""}`}
-                href="https://drive.google.com/file/d/1BcIWJTPR7DS4hLShUGIVTOQ6f7GAExSA/view?usp=drive_link"
+                href="https://drive.google.com/file/d/1AYcBqLp-WYRK84h87wVp9ITsoZohXOPe/view?usp=drive_link"
                 target="_blank"
                 rel="noreferrer"
               >
