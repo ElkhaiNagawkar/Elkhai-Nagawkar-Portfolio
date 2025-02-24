@@ -56,6 +56,7 @@ export default function Toolbox(props) {
             >
               <Box skill="C" />
               <Box skill="C++" />
+              <Box skill="C#" />
               <Box skill="Java" />
               <Box skill="SQL" />
               <Box skill="HTML" />
@@ -80,6 +81,7 @@ export default function Toolbox(props) {
             >
               <Box skill="React" />
               <Box skill="Tailwind" />
+              <Box skill="MongoDB" />
             </div>
           </div>
         </div>
@@ -115,7 +117,6 @@ export default function Toolbox(props) {
             }`}
             ref={VersionRef}
           >
-            <Box skill="C#" />
             <Box skill="jQuery" />
             <Box skill="Bootstrap" />
           </div>

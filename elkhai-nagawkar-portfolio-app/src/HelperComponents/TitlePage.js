@@ -50,7 +50,7 @@ export default function TitlePage(props) {
       <div className={`status`}>
         <div className="status-circle"></div>
         <p className="status--text">
-          Currently looking for a Co-op/Internship for the 2024 Fall term
+          Currently looking for a Co-op/Internship for the 2025 Summer term
         </p>
       </div>
     </section>
