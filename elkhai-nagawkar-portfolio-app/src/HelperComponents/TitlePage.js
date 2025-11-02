@@ -37,7 +37,7 @@ export default function TitlePage(props) {
           A <strong>computer programmer</strong> specializing in{" "}
           <strong> backend </strong> and{" "}
           <strong>frontend software development</strong> with more than{" "}
-          <strong>two years</strong> of educational experience. I'm passionate
+          <strong>three years</strong> of educational experience. I'm passionate
           about creating exceptional as well as performance driven software.
         </p>
         <div className="scroll--div">
@@ -50,7 +50,7 @@ export default function TitlePage(props) {
       <div className={`status`}>
         <div className="status-circle"></div>
         <p className="status--text">
-          Currently looking for a Co-op/Internship for the 2025 Summer term
+          Currently looking for a full time position
         </p>
       </div>
     </section>

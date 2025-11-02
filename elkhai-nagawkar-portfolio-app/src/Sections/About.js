@@ -48,7 +48,7 @@ export default function About(props) {
           student attending Fanshawe College. Since a young age I was always
           intrigued and interested in technology especially the software aspect
           of it and how it actually worked in the background. Fast forward to
-          2024 and I'm now learning and understanding how those softwares,
+          2025 and I'm now learning and understanding how those softwares,
           websites, and applications are created! What excites me most about
           being a programmer is the problem-solving aspect of it due to the
           accomplishment you feel when the problem is solved.

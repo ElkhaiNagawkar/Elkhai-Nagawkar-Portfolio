@@ -80,6 +80,7 @@ export default function Toolbox(props) {
               }`}
             >
               <Box skill="React" />
+              <Box skill="Angular" />
               <Box skill="Tailwind" />
               <Box skill="MongoDB" />
             </div>
